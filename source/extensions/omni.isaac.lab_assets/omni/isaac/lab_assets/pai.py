@@ -41,7 +41,7 @@ PAI_CFG = ArticulationCfg(
         ),
     ),
     init_state=ArticulationCfg.InitialStateCfg(
-        pos=(3.0, 0.0, 0.4),
+        pos=(0.0, 0.0, 0.4),
         joint_pos={
             "left_hip_yaw_joint":      0.0,
             "left_hip_roll_joint":     0.0,
