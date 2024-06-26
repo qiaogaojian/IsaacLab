@@ -43,7 +43,7 @@ def overwrite_python_analysis_extra_paths(isaaclab_settings: str) -> str:
         FileNotFoundError: If the isaac-sim settings file does not exist.
     """
     # isaac-sim settings
-    isaacsim_vscode_filename = os.path.join(ISAACSIM_DIR, ".vscode", "settings.json")
+    isaacsim_vscode_filename = os.path.join(ISAACLAB_DIR, ".vscode", "settings.json")
     # make sure the isaac-sim settings file exists
     if not os.path.exists(isaacsim_vscode_filename):
         raise FileNotFoundError(f"Could not find the isaac-sim settings file: {isaacsim_vscode_filename}")
