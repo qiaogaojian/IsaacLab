@@ -82,7 +82,8 @@ PAI_CFG = ArticulationCfg(
                 ".*_knee_joint":        0.8,  # 0.125,
                 ".*_ankle_pitch_joint": 0.3,  # 0.125,
                 ".*_ankle_roll_joint":  0.3,  # 0.125,
-            }
+            },
+            friction=0.5,
         ),
     },
 )

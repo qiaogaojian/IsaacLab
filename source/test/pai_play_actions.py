@@ -38,6 +38,7 @@ from omni.isaac.lab.assets import Articulation
 # Pre-defined configs
 ##
 from omni.isaac.lab_assets.pai import PAI_CFG
+from omni.isaac.lab.sim.spawners import materials
 
 from pycore.base import Core
 from pycore.logger import Logger
@@ -47,7 +48,14 @@ from pycore.utils.tools import Tools
 def design_scene() -> tuple[dict, list[list[float]]]:
     """Designs the scene."""
     # Ground-plane
-    cfg = sim_utils.GroundPlaneCfg()
+    # Create ground plane with no friction
+    cfg = sim_utils.GroundPlaneCfg(
+        physics_material=materials.RigidBodyMaterialCfg(
+            static_friction=1.0,
+            dynamic_friction=1.0,
+            restitution=0.0,
+        )
+    )
     cfg.func("/World/defaultGroundPlane", cfg)
     # Lights
     cfg = sim_utils.DomeLightCfg(intensity=2000.0, color=(0.75, 0.75, 0.75))
